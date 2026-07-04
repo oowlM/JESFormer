@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+.vscode/
+RESUME.md
+
+experiments/
+results/
+tb_logger/
+
+*.log
+*.csv
+*.state
+
+weights/*.pth
