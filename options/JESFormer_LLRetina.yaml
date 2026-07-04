@@ -18,13 +18,13 @@ datasets:
       type: disk
     use_shuffle: true
     num_worker_per_gpu: 8
-    batch_size_per_gpu: 1
+    batch_size_per_gpu: 2
     # Staged training schedule:
     # - `iters` gives the number of iterations for each stage.
     # - `mini_batch_sizes` and `gt_sizes` must have the same number of stages.
     # - With a single stage, these lists can all have length 1.
     mini_batch_sizes: [2]
-    iters: [200000]
+    iters: [123000]
     gt_size: 512
     gt_sizes: [512]
     dataset_enlarge_ratio: 1
@@ -53,12 +53,12 @@ path:
   resume_state: ~
 
 train:
-  total_iter: 200000
+  total_iter: 123000
   warmup_iter: 5000
   use_grad_clip: true
   scheduler:
     type: TrueCosineAnnealingLR
-    T_max: 200000
+    T_max: 123000
     eta_min: 1.0e-6
   mixing_augs:
     mixup: true
@@ -89,7 +89,7 @@ train:
         reduction: mean
 
 val:
-  val_freq: 200000
+  val_freq: 12300
   save_img: true
   rgb2bgr: true
   use_image: true
@@ -118,6 +118,6 @@ val:
         type: calculate_recall
 
 logger:
-  print_freq: 1000
-  save_checkpoint_freq: 20000
+  print_freq: 1230
+  save_checkpoint_freq: 12300
   use_tb_logger: true

@@ -1,5 +1,9 @@
 # JESFormer
-This repository provides the official implementation of JESFormer for **low-light fundus image joint enhancement and segementation**. 
+This repository accompanies the manuscript:
+
+**Toward Low-Illumination Fundus Imaging via Structure-Aware Low-Light Image Enhancement**
+
+and provides the official PyTorch implementation of JESFormerfor for joint low-illumination fundus image enhancement and vessel segmentation .
 
 ## Repository layout🏘️
 
@@ -49,8 +53,6 @@ python3 test.py \
   --test_enhance \
   --no-test_segment
 ```
-If you want to evaluate LFPS, download the pretrained weight `RETFound_mae_natureCFP` from the official repository of [RETFound]( https://github.com/rmaphoh/RETFound) and place it under `weights/RETFound_mae_natureCFP.pth`. 🌻🌻
-
 If you only want prediction and result saving:
 
 ```bash
@@ -63,3 +65,11 @@ python3 test.py \
   --no-test_enhance \
   --no-test_segment
 ```
+
+## Third-party notices🟢
+
+This repository includes a RETFound wrapper used only for LFPS evaluation. RETFound is used only as a frozen feature extractor for LFPS. Codes related are adapted from the official [RETFound repository](https://github.com/rmaphoh/RETFound).
+
+If you want to evaluate LFPS, download the pretrained weight `RETFound_mae_natureCFP` from the official repository and place it under `weights/RETFound_mae_natureCFP.pth`. 
+
+The included third-party components retain their original copyright and license notices.🌻🌻
